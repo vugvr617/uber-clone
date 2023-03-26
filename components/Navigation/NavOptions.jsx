@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     paddingHorizontal: 14,
     paddingVertical: 12,
+    borderRadius: 6,
   },
   image: { width: 120, height: 120, resizeMode: 'contain' },
   title: { marginVertical: 8, fontWeight: 600, fontSize: 16 },

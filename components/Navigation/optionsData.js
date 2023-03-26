@@ -9,5 +9,4 @@ export const optionsData = [
     source: { uri: 'https://links.papareact.com/28w' },
     screen: 'EatsScreen',
   },
-  
 ];
