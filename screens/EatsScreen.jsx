@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import React from 'react';
+import { mainStyles } from '../styles/Styles';
 
 const EatsScreen = () => {
   return (
-    <View>
-      <Text>EatsScreen</Text>
-    </View>
-  )
-}
+    <SafeAreaView style={mainStyles.views.container}>
+      <View style={mainStyles.views.main}>
+        <Text>EatsScreen</Text>
+      </View>
+    </SafeAreaView>
+  );
+};
 
-export default EatsScreen
+export default EatsScreen;
 
-const styles = StyleSheet.create({})
