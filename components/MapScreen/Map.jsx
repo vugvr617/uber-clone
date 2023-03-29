@@ -8,6 +8,14 @@ const Map = () => {
   const origin = useSelector(selectOrigin);
   const dispatch = useDispatch();
 
+  const pressHandler = (coordinate) => {
+    const newLocation = {
+      lat: coordinate.nativeEvent.coordinate.latitude,
+      lng: coordinate.nativeEvent.coordinate.longitude,
+    };
+    dispatch(setOrigin({ ...origin, coordinates: newLocation }));
+  };
+
   return (
     <MapView
       style={{ height: '50%' }}
@@ -18,12 +26,7 @@ const Map = () => {
         longitudeDelta: 0.002,
       }}
       onPress={(coordinate) => {
-        const newLocation = {
-          lat: coordinate.nativeEvent.coordinate.latitude,
-          lng: coordinate.nativeEvent.coordinate.longitude,
-        };
-        dispatch(setOrigin({...origin, coordinates: newLocation}));
-        console.log()
+        pressHandler(coordinate);
       }}
       title='Where from ?'
       mapType={'mutedStandard'}

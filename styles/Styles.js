@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const mainStyles = StyleSheet.create({
+export const mainStyles = StyleSheet.create({
   views: {container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -13,4 +13,3 @@ const mainStyles = StyleSheet.create({
   }}
 });
 
-export {mainStyles};

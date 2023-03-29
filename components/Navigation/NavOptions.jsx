@@ -6,12 +6,16 @@ import {
   FlatList,
   Image,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import { optionsData } from './optionsData';
 import { Icon } from 'react-native-elements';
+import { useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
+import { selectOrigin } from '../../store/locationSlice';
 
 const NavOptions = () => {
+  const [error, setError] = useState(null);
+  const origin = useSelector(selectOrigin);
   const navigation = useNavigation();
 
   return (
@@ -23,6 +27,7 @@ const NavOptions = () => {
           }}
           key={index}
           style={styles.navContainer}
+          disabled={!origin.coordinates}
         >
           <View>
             <Image style={styles.image} source={item.source} />
@@ -40,7 +45,7 @@ const NavOptions = () => {
 const styles = StyleSheet.create({
   main: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     width: '100%',
   },
   navContainer: {
